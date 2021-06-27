@@ -1,50 +1,41 @@
-
 <html>
-	<head>
-		<title>Registration form</title>
-		<meta charset="utf-8"/>
-		<script>  
-		function verifyPassword() {  
-  		var pw = document.getElementById("pswd").value;   
-  		var pw1 = document.getElementById("pswd").value;  
-  		var maild = document.getElementById("mail").value;
-  		if(maild == "") {  
-     			document.getElementById("message").innerHTML = "**Fill Email field please!";  
-     			return false;  
-  		} 
-  		if(pw == "") {  
-     			document.getElementById("message").innerHTML = "**Fill the password please!";  
-     			return false;  
- 		 }  
-   
-  		if(pw.length < 8) {  
-     			document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
-     			return false;  
- 		 }  
-   		if(pw==pw1) {  
-     			document.getElementById("message").innerHTML = "**Password doesn't match!";  
-     			return false;  
-  		}  
-		}  
-		</script>  
-	</head>
-	<body bgcolor=#E2F4FD >
-		<br/>
-		<form action="">
-		<h2 align="center"><font color="red">Book Appoinment</h2>
-		<font color="black">		
-		<table align="center" cellspacing="30"><h3>
-		<tr><td>User Name</td><td><input type="text"/></td></tr>
-		<tr><td>Email</td><td><input type="email" name="mail"></td></tr>
-		<tr><td>Password</td><td><input type="password" name="pswd"><span id = "message" style="color:red"> </span></td></tr>
-		
-		<tr><td>Confirm Password</td><td><input type="password" name="pswd1"></td></tr>
-		
-		</table>
-		<center><input type="reset" value="Reset">&nbsp&nbsp&nbsp&nbsp
-	<button onclick="myFunction()">Submit</button>
-	</center>	
-		
-	</form>
-	</body>
+<head>
+<title>registration page</title>
+</head>
+<script>
+function verifyPassword() {
+  var pw = document.getElementById("pswd").value;
+  if(pw == "") {
+     document.getElementById("message").innerHTML = "**Fill the password please!";
+     return false;
+  }
+ 
+  if(pw.length < 8) {
+     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+     return false;
+  }
+
+
+}
+</script>
+
+<body bgcolor=#E2F4FD>
+<center>
+<h1 style="color:red">Register</h1><br/>
+<form onsubmit ="return verifyPassword()">
+<table cellspacing="40"><tr><td>User Name</td>
+<td><input type="text"/></td></tr>
+<tr><td>Email</td>
+<td><input type="email" id="maild></"td></tr>
+<tr><td> Enter Password </td>
+<td><input type = "password" id = "pswd" value = ""> </td></tr>
+</table>
+<span id = "message" style="color:red"> </span> <br><br>
+
+<input type = "submit" value = "Submit">
+
+<button type = "reset" value = "Reset" >Reset</button>
+</form>
+</center>
+</body>
 </html>
